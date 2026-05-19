@@ -47,7 +47,7 @@
   margin-bottom: 2rem;
 }
 
-/* --- [기존 유지] hero-title 애니메이션 --- */
+/* --- hero-title 애니메이션 --- */
 .hero-title {
   font-size: 3.2rem;
   font-weight: 800;
@@ -119,15 +119,9 @@
   width: 55%;
   height: 100%;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 1s ease 0.3s;
 }
 
-.hero-visual.loaded {
-  opacity: 1;
-}
-
-/* 거대한 배경 텍스트 */
+/* 거대한 배경 텍스트 그룹 */
 .bg-typography {
   position: relative;
   z-index: 2;
@@ -137,38 +131,29 @@
 }
 
 /* ============================================================
-   🔥 [수정] 거대 배경 글자(bg-text) 시차 슬라이드 애니메이션
+   🔥 [수정] 한 글자씩 등장하는 애니메이션 설정
    ============================================================ */
 .bg-text {
   font-size: 14rem;
   font-weight: 900;
-  color: #111111; /* 배경과 비슷하게 아주 어두운 색 */
+  color: #111111;
   white-space: nowrap;
   letter-spacing: -5px;
   font-family: "Arial Black", Impact, sans-serif;
+  display: flex; /* 글자들을 나란히 배치하기 위함 */
+}
 
-  /* 💡 초기 상태: 약간 투명하고, 오른쪽으로 60px 밀려있음 */
+/* 낱개 글자(span)의 초기 상태: 투명하고 오른쪽으로 밀려있음 */
+.bg-text .char {
   opacity: 0;
-  transform: translateX(60px);
-
-  /* 등장할 때 사용할 부드러운 애니메이션 속도 설정 */
+  transform: translateX(40px);
   transition:
-    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 1.8s ease;
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s ease;
 }
 
-/* ⏳ 첫 번째 줄 (FULL STAC) 등장 타이밍 지연 */
-.bg-text:nth-child(1) {
-  transition-delay: 0.4s;
-}
-
-/* ⏳ 두 번째 줄 (DEVELOPE) 등장 타이밍 지연 (조금 더 늦게 나와서 시차 체감!) */
-.bg-text:nth-child(2) {
-  transition-delay: 0.6s;
-}
-
-/* 화면 로드(.loaded)되면 원래 위치(0)로 오면서 선명해짐 */
-.hero-visual.loaded .bg-text {
+/* 화면 로드(.loaded)되면 원래 위치로 스르륵 등장! */
+.hero-visual.loaded .bg-text .char {
   opacity: 1;
   transform: translateX(0);
 }
@@ -179,7 +164,7 @@
   position: absolute;
   border: 35px solid #ffca3a;
   border-radius: 50%;
-  z-index: 1; /* 글자 뒤에 배치 (필요시 z-index 조정) */
+  z-index: 1;
 }
 
 .arc-top {
@@ -198,4 +183,74 @@
   border-radius: 0 0 250px 250px;
   bottom: -30px;
   right: 10%;
+}
+
+/* ============================================================
+   📱 완벽한 반응형 뷰 (Media Queries)
+   ============================================================ */
+/* 태블릿 이하 (가로 1024px 이하) */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem; /* 제목 크기 축소 */
+  }
+  .bg-text {
+    font-size: 9rem; /* 배경 글자 크기 축소 */
+  }
+  .yellow-arc {
+    transform: scale(0.8); /* 장식 크기 축소 */
+  }
+  .hero-visual {
+    right: -10%;
+  }
+}
+
+/* 모바일 환경 (가로 768px 이하) */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column; /* 좌우 배치를 상하 배치로 변경 */
+    text-align: center;
+    justify-content: center;
+    padding-top: 10vh;
+  }
+
+  .hero-text {
+    width: 100%;
+    z-index: 10;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    br {
+      display: none;
+    } /* 모바일에선 자연스럽게 줄바꿈 되도록 br 태그 숨김 */
+  }
+
+  .hero-buttons {
+    justify-content: center; /* 버튼 가운데 정렬 */
+  }
+
+  /* 모바일에서는 배경 글자를 흐릿하게 만들고 화면 꽉 차게 중앙으로 이동 */
+  .hero-visual {
+    right: 0;
+    left: 0;
+    top: 55%; /* 화면 중간쯤으로 이동 */
+    width: 100%;
+    opacity: 0.3 !important; /* 모바일에선 글자를 흐릿하게 처리해 가독성 확보 */
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* 배경 터치 방지 */
+  }
+
+  .bg-typography {
+    align-items: center; /* 배경 글자 중앙 정렬 */
+  }
+
+  .bg-text {
+    font-size: 5.5rem;
+    letter-spacing: -2px;
+  }
 }

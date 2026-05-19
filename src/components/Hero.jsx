@@ -54,8 +54,34 @@ export default function Hero() {
         {/* 우측: 배경 타이포그래피 및 그래픽 영역 */}
         <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
           <div className="bg-typography">
-            <div className="bg-text">FULL STAC</div>
-            <div className="bg-text">DEVELOPE</div>
+            
+            {/* 🔥 수정된 부분: 글자를 하나씩 쪼개서 span으로 렌더링합니다. */}
+            <div className="bg-text">
+              {"FULL STAC".split('').map((char, index) => (
+                <span 
+                  key={index} 
+                  className="char" 
+                  // 0.4초부터 시작해서 한 글자당 0.1초씩 지연되어 나타남
+                  style={{ transitionDelay: `${0.4 + (index * 0.1)}s` }}
+                >
+                  {char === ' ' ? '\u00A0' : char} {/* 띄어쓰기 인식 처리 */}
+                </span>
+              ))}
+            </div>
+            
+            <div className="bg-text">
+              {"DEVELOPE".split('').map((char, index) => (
+                <span 
+                  key={index} 
+                  className="char" 
+                  // 첫 번째 줄이 끝날 때쯤인 1.2초부터 이어서 등장
+                  style={{ transitionDelay: `${1.2 + (index * 0.1)}s` }}
+                >
+                  {char}
+                </span>
+              ))}
+            </div>
+
           </div>
           {/* 노란색 반원 장식 */}
           <div className="yellow-arc arc-top"></div>
