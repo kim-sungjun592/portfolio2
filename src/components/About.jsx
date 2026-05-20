@@ -28,9 +28,14 @@ export default function About() {
   }, []);
 
   return (
-    // section에 ref를 달아주고, isVisible 상태에 따라 클래스 추가
-    <section id="about" className="about-section" ref={sectionRef}>
-      <div className={`about-container ${isVisible ? 'animate-on-scroll' : ''}`}>
+    // ✅ 변경 포인트 1: 여기에 ${isVisible ? 'animate-on-scroll' : ''} 를 넣어줍니다.
+    <section 
+      id="about" 
+      className={`about-section ${isVisible ? 'animate-on-scroll' : ''}`} 
+      ref={sectionRef}
+    >
+      {/* ✅ 변경 포인트 2: 원래 있던 복잡한 템플릿 리터럴을 걷어내고 깔끔하게 클래스명만 남깁니다. */}
+      <div className="about-container">
         
         {/* 메인 제목 및 부제목 */}
         <div className="about-header-text">

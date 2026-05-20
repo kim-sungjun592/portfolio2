@@ -1,7 +1,7 @@
 @import "./variables.css";
 
 .footer {
-  background: linear-gradient(135deg, var(--text-color) 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, var(--text-color) 0%, #1a1a1a 100%);
   color: white;
   position: relative;
   padding-bottom: 60px;
@@ -226,7 +226,7 @@ body.light-mode .footer {
 }
 
 body.light-mode .footer-container {
-  background-color: #ffffff !important;
+  background-color: #f8f9fa !important;
   border-top: 1px solid #e9ecef !important;
 }
 

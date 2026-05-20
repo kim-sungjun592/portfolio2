@@ -25,7 +25,7 @@
 
 /* 💡 [추가] 라이트 모드일 때 헤더 전체 배경 변경 */
 body.light-mode .header {
-  background-color: #ffffff !important;
+  background-color: #f8f9fa !important;
   border-bottom: 1px solid #e9ecef !important;
 }
 

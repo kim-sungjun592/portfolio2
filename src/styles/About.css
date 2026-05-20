@@ -89,95 +89,80 @@
   margin: 0 auto;
 }
 
-/* 반응형 처리 (화면이 작아질 때 세로로 쌓기) */
+/* =========================================
+   반응형 처리 (태블릿 및 모바일 화면)
+   ========================================= */
 @media (max-width: 992px) {
+  /* 1. 📦 통계 박스를 1줄이 아니라 2열(2x2) 그리드로 변경 */
   .about-stats-box {
-    flex-direction: column;
-    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2줄씩 예쁘게 반반 나눔 */
+    gap: 2.5rem 1rem; /* 위아래 간격은 2.5rem, 좌우 간격은 1rem */
+    padding: 2rem 1rem; /* 폰에서 여백이 너무 많이 남지 않도록 패딩 축소! */
+    margin-top: 2rem;
   }
 
+  /* 2. 기존 세로 정렬용 마진 제거 및 초기화 */
   .stat-column {
-    margin-bottom: 3rem;
-  }
-
-  .stat-column:last-child {
     margin-bottom: 0;
+    min-width: unset; /* 그리드 안에서 유연하게 늘어나도록 설정 */
   }
 
-  /* 모바일에서는 세로 구분선 숨김 */
+  /* 3. 스마트폰 화면에서 숫자가 너무 크면 깨질 수 있으니 살짝 조절 */
+  .stat-column h3 {
+    font-size: 2rem; /* 기존 2.5rem -> 2rem으로 축소 */
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-column p {
+    font-size: 0.9rem; /* 설명 글씨도 모바일에 맞게 살짝 축소 */
+  }
+
+  /* 4. 'Collaborations' 너비 제한 해제 (2열 구조에 맞게 자연스럽게 둠) */
+  .stat-column.collaborations p {
+    width: auto;
+  }
+
+  /* 기존에 있던 불필요한 after 구분선 숨김 처리 유지 */
   .stat-column:not(:last-child)::after {
     display: none;
   }
 }
-/* =========================================
-   About 섹션 스크롤 애니메이션 (Scroll Reveal)
-   ========================================= */
 
-/* 1. 기본 상태: 모든 요소를 숨기고 아래로 내려놓음 */
+/* ============================================================
+   🔥 [복구 완료] 스크롤 애니메이션 효과 클래스 (맨 아래 안전하게 추가)
+   ============================================================ */
+
+/* 1. 화면에 들어오기 전: 요소들을 투명하게 만들고 아래로 40px 내려서 대기시킴 */
 .about-title,
 .about-subtitle,
 .about-stats-box {
   opacity: 0;
   transform: translateY(40px);
+  /* 부드러운 가속도 곡선(cubic-bezier) 적용 */
+  transition:
+    opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.stat-column {
-  opacity: 0;
-  transform: translateY(20px) scale(0.9);
+/* 2. 스크롤이 감지되어 .animate-on-scroll 클래스가 붙으면 순서대로 스르륵 등장 */
+/* ⏳ 타이틀 즉시 등장 (딜레이 0.1초) */
+.about-section.animate-on-scroll .about-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
 }
 
-/* 2. 스크롤 감지 완료! (animate-on-scroll 클래스가 붙었을 때) */
-/* 제목은 부드럽게 위로 등장 */
-.animate-on-scroll .about-title {
-  animation: fadeUp 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1);
+/* ⏳ 서브타이틀 약간 늦게 등장 (딜레이 0.3초) */
+.about-section.animate-on-scroll .about-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
-/* 부제목은 0.2초 늦게 등장 */
-.animate-on-scroll .about-subtitle {
-  animation: fadeUp 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
-}
-
-/* 큰 네모 박스는 0.4초 늦게 등장 */
-.animate-on-scroll .about-stats-box {
-  animation: fadeUp 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1) 0.4s;
-}
-
-/* 3. 통계 기둥 4개: 시차를 두고 통통 튀어 오르는(Pop) 효과 */
-.animate-on-scroll .stat-column {
-  /* cubic-bezier를 사용해 젤리처럼 살짝 더 커졌다가 제자리로 돌아오는 효과 */
-  animation: popIn 0.6s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.animate-on-scroll .stat-column:nth-child(1) {
-  animation-delay: 0.6s;
-}
-.animate-on-scroll .stat-column:nth-child(2) {
-  animation-delay: 0.75s;
-}
-.animate-on-scroll .stat-column:nth-child(3) {
-  animation-delay: 0.9s;
-}
-.animate-on-scroll .stat-column:nth-child(4) {
-  animation-delay: 1.05s;
-}
-
-/* =========================================
-   애니메이션 키프레임(Keyframes) 정의
-   ========================================= */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* ⏳ 대형 통계 박스 마지막에 묵직하게 등장 (딜레이 0.5초) */
+.about-section.animate-on-scroll .about-stats-box {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
 }

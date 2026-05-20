@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// 1. 맨 위에 아이콘 라이브러리를 불러옵니다!
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import '../styles/Contact.css';
 
 export default function Contact() {
@@ -169,20 +171,21 @@ export default function Contact() {
           </form>
         </div>
 
+        {/* 2. 하단 SNS 영역을 텍스트에서 아이콘으로 수정했습니다! */}
         <div className="social-links">
           <span className="social-label">Follow me on</span>
           <div className="social-icons">
-            <a href="#" className="social-link" title="GitHub">
-              <span>GitHub</span>
+            <a href="#" className="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+              <FaGithub size="24" />
             </a>
-            <a href="#" className="social-link" title="LinkedIn">
-              <span>LinkedIn</span>
+            <a href="#" className="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin size="24" />
             </a>
-            <a href="#" className="social-link" title="Twitter">
-              <span>Twitter</span>
+            <a href="#" className="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">
+              <FaTwitter size="24" />
             </a>
-            <a href="#" className="social-link" title="Instagram">
-              <span>Instagram</span>
+            <a href="#" className="social-link" title="Instagram" target="_blank" rel="noopener noreferrer">
+              <FaInstagram size="24" />
             </a>
           </div>
         </div>
