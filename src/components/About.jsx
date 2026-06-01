@@ -41,7 +41,7 @@ export default function About() {
         <div className="about-header-text">
           <h2 className="about-title">Design & Code Studio</h2>
           <p className="about-subtitle">
-            Full-stack backend developer with modern UI design systems, scalable architecture, admin dashboards, and creative web experiences.
+            최신 UI 디자인 시스템, 확장 가능한 아키텍처, 관리자 대시보드 및 창의적인 웹 경험을 갖춘 풀스택 백엔드 개발자입니다.
           </p>
         </div>
 

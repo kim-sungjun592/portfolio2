@@ -30,7 +30,7 @@ export default function Projects() {
     {
       id: 1,
       title: 'converse UI/UX Design',
-      description: 'A comprehensive Converse web experience: from high-fidelity Figma prototyping to robust full-stack implementation',
+      description: '고품질 Figma 프로토타이핑부터 견고한 풀스택 구현까지, 포괄적인 Converse 웹 경험을 제공합니다.',
       image: '/images/converse.png',
       technologies: ['Node.js', 'ui/ux', 'figma'],
       liveLink: 'https://canverse-tocobo.vercel.app', 
@@ -39,7 +39,7 @@ export default function Projects() {
     {
       id: 2,
       title: 'Picstory',
-      description: 'This project is a MERN-based full-stack web application...',
+      description: 'MongoDB부터 React까지, 견고한 MERN 스택 위에 사진과 일상을 유기적으로 연결한 풀스택 웹 서비스, picstory입니다',
       image: '/images/picstory.png',
       technologies: ['Node.js', 'ui/ux', 'figma'],
       // 💡 한 가지 팁: 현재 localhost 주소로 되어 있는데, 나중에 배포하시면 배포 주소로 갈아끼워 주세요!
@@ -61,8 +61,8 @@ export default function Projects() {
         <div className="section-header">
           <h2 className="section-title">High-Impact Builds</h2>
           <p className="section-subtitle">
-            Architecting robust backends and intuitive design systems that transform complex data into<br />
-            seamless experiences
+            복잡한 데이터를 매끄러운 사용자 경험으로 변환하는 견고한 백엔드 및 직관적인 디자인 시스템 설계<br />
+            
           </p>
         </div>
 

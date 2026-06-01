@@ -31,7 +31,7 @@ export default function ProjectShorts() {
       id: 1,
       title: 'weather app',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '실시간 기상 API 데이터를 유기적으로 가공하여, 유저에게 필요한 날씨 정보를 직관적인 그래픽과 감각적인 UI로 시각화한 애플리케이션입니다.',
       image: '/images/weather.png',
       liveLink: 'http://localhost:5175', 
       codeLink: 'https://github.com/kim-sungjun592/Wifi-Spot.git'
@@ -40,7 +40,7 @@ export default function ProjectShorts() {
       id: 2,
       title: '끝말잇기',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '추억의 고전 놀이를 감각적인 UI와 실시간 인터랙션으로 재해석하여, 남녀노소 누구나 가볍고 중독성 있게 즐길 수 있는 두뇌 회전 웹 게임입니다.',
       image: '/images/game.png',
       liveLink: 'https://world-game-zeta.vercel.app', 
       codeLink: 'https://github.com/kim-sungjun592/world-game.git'
@@ -49,7 +49,7 @@ export default function ProjectShorts() {
       id: 3,
       title: '타이머 앱',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '오차 없는 정밀한 시간 데이터 제어와 직관적인 상태 관리를 통해, 사용자의 업무 및 학습 효율을 극대화하는 생산성 웹 애플리케이션입니다.',
       image: '/images/timer.png',
       liveLink: 'https://timer-six-psi.vercel.app', 
       codeLink: 'https://github.com/kim-sungjun592/timer.git'
@@ -58,7 +58,7 @@ export default function ProjectShorts() {
       id: 4,
       title: 'Todolist',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '컴포넌트 단위의 유기적인 상태 관리와 유저 데이터의 안정적인 영속성(Persistence)을 기반으로, 일상의 할 일을 가장 직관적으로 제어할 수 있도록 설계한 일정 관리 애플리케이션입니다.',
       image: '/images/todolist.png',
       liveLink: 'https://todolist-ver2-sigma.vercel.app', 
       codeLink: 'https://github.com/kim-sungjun592/todolist-ver2.git'
@@ -67,7 +67,7 @@ export default function ProjectShorts() {
       id: 5,
       title: '감성 일기장',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '바쁜 일상 속에서 쉽게 휘발되는 감정의 조각들을 따뜻한 비주얼로 기록하고, 소란했던 하루를 차분히 되돌아보는 시간을 선물하는 힐링 로그 플랫폼입니다.',
       image: '/images/emotion-diary.png',
       liveLink: 'https://emotion-diary-ashen-rho.vercel.app', 
       codeLink: 'https://github.com/kim-sungjun592/emotion-diary.git'
@@ -76,7 +76,7 @@ export default function ProjectShorts() {
       id: 6,
       title: 'wifi-spot',
       tech: ['REACT', 'NODE.JS', 'FIREBASE'],
-      desc: 'Full-featured e-commerce system with product management, inventory tracking, secure payments, and real-time order updates.',
+      desc: '사용자의 실시간 위치(Geolocation) 데이터와 외부 공공 API를 매끄럽게 연동하여, 주변의 가용 와이파이 스폿을 지도상에 실시간으로 매핑하고 시각화한 위치 기반(LBS) 풀스택 웹 애플리케이션입니다.',
       image: '/images/wifi-spot.png',
       liveLink: 'https://wifi-spot-woad.vercel.app/map', 
       codeLink: 'https://github.com/kim-sungjun592/Wifi-Spot.git'
@@ -95,8 +95,8 @@ export default function ProjectShorts() {
         <div className="shorts-header">
           <h2 className="shorts-main-title">Project Shorts</h2>
           <p className="shorts-subtitle">
-            A curated collection of compact projects, blending robust backend logic with intuitive<br />
-            visual design.
+            견고한 백엔드 로직과 직관적인 시각적 디자인이 조화를 이루는, 엄선된 소규모 프로젝트 모음입니다.<br />
+            
           </p>
         </div>
 

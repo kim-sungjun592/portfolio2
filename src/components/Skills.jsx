@@ -28,47 +28,47 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      title: 'Frontend\nDevelopment',
+      title: 'Frontend',
       icon: '⚡',
       color: '#8b5cf6', // 보라색
       skills: [
-        { name: 'React / Next.js', percent: 90 },
-        { name: 'TypeScript', percent: 85 },
-        { name: 'Tailwind CSS', percent: 92 },
-        { name: 'Redux / Zustand', percent: 88 },
+        { name: 'React.js', percent: 90 },
+        { name: 'JavaScript', percent: 85 },
+        { name: 'React Hooks', percent: 92 },
+        { name: 'HTML5 & CSS3', percent: 88 },
       ],
     },
     {
-      title: 'Backend\nDevelopment',
+      title: 'Backend & Database',
       icon: '⏱️',
       color: '#10b981', // 초록색
       skills: [
-        { name: 'Node.js / Express', percent: 92 },
-        { name: 'REST & GraphQL', percent: 88 },
-        { name: 'PostgreSQL / Redis', percent: 86 },
-        { name: 'Prisma / TypeORM', percent: 84 },
+        { name: 'Node.js', percent: 92 },
+        { name: 'Express.js', percent: 88 },
+        { name: 'MongoDB', percent: 86 },
+        { name: 'Mongoose', percent: 84 },
       ],
     },
     {
-      title: 'DevOps &\nCloud',
+      title: 'API & Advanced Logic',
       icon: '⬡',
       color: '#f97316', // 주황색
       skills: [
-        { name: 'Docker / Kubernetes', percent: 82 },
-        { name: 'AWS / GCP / Vercel', percent: 85 },
-        { name: 'CI/CD Pipelines', percent: 80 },
-        { name: 'Nginx / Linux', percent: 83 },
+        { name: 'REST API / Axios', percent: 82 },
+        { name: 'Geolocation API', percent: 85 },
+        { name: 'Maps API Integration', percent: 80 },
+        { name: 'State / Validation Logic', percent: 83 },
       ],
     },
     {
-      title: 'Testing &\nQA',
+      title: 'Design & Deployment',
       icon: '✓',
       color: '#ec4899', // 핑크색
       skills: [
-        { name: 'Jest / Vitest', percent: 87 },
-        { name: 'Cypress / Playwright', percent: 84 },
-        { name: 'React Testing Lib', percent: 85 },
-        { name: 'Storybook', percent: 88 },
+        { name: 'fiama', percent: 87 },
+        { name: 'Vercel Deployment', percent: 95 },
+        { name: 'Git & GitHub', percent: 85 },
+        { name: 'Cross-Origin Resource Sharing', percent: 88 },
       ],
     },
   ];
@@ -86,8 +86,9 @@ export default function Skills() {
         <div className="skills-header">
           <h2 className="skills-title">Skills & Tools</h2>
           <p className="skills-subtitle">
-            Design-driven web development with scalable backend architecture,<br />
-            interactive dashboards, and optimized user experiences.
+            확장 가능한 백엔드 아키텍처,
+대화형 대시보드 및 최적화된 사용자 경험을 갖춘 디자인 중심의 웹 개발.<br />
+            
           </p>
         </div>
 
