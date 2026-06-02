@@ -52,7 +52,7 @@ export default function Projects() {
       title: 'Restaurant search',
       description: 'FastAPI와 MongoDB를 기반으로 사용자가 원하는 지역의 로컬 맛집과 감성 카페를 실시간으로 탐색하고, 나만의 미식 바구니에 저장할 수 있는 맛집 탐방 가이드 웹 애플리케이션입니다.',
       image: '/images/restaurant.png',
-      technologies: ['FastAPI', 'Asyncio / Aiohttp', 'MongoDB (Odmantic)'] ,
+      technologies: ['Python (FastAPI)', 'Asyncio / Aiohttp', 'MongoDB'] ,
       liveLink: 'https://bookbook-kappa.vercel.app/', 
       codeLink: 'https://github.com/kim-sungjun592/bookbook.git' 
     }
