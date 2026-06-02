@@ -42,14 +42,24 @@ export default function Projects() {
       description: 'MongoDB부터 React까지, 견고한 MERN 스택 위에 사진과 일상을 유기적으로 연결한 풀스택 웹 서비스, picstory입니다',
       image: '/images/picstory.png',
       technologies: ['Node.js', 'ui/ux', 'figma'],
-      // 💡 한 가지 팁: 현재 localhost 주소로 되어 있는데, 나중에 배포하시면 배포 주소로 갈아끼워 주세요!
+      
       liveLink: 'http://localhost:5173', 
       codeLink: 'https://github.com/kim-sungjun592/picstory.git'
+    },
+    
+    {
+      id: 3,
+      title: 'Restaurant search',
+      description: 'FastAPI와 MongoDB를 기반으로 사용자가 원하는 지역의 로컬 맛집과 감성 카페를 실시간으로 탐색하고, 나만의 미식 바구니에 저장할 수 있는 맛집 탐방 가이드 웹 애플리케이션입니다.',
+      image: '/images/restaurant.png',
+      technologies: ['FastAPI', 'Asyncio / Aiohttp', 'MongoDB (Odmantic)'] ,
+      liveLink: 'https://bookbook-kappa.vercel.app/', 
+      codeLink: 'https://github.com/kim-sungjun592/bookbook.git' 
     }
   ];
 
   return (
-    // ✅ section에 ref를 달고, 이고, isVisible 상태에 따라 'animate-on-scroll' 클래스를 붙여줍니다.
+    
     <section 
       id="projects" 
       className={`high-impact-section ${isVisible ? 'animate-on-scroll' : ''}`} 
