@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // 1. 맨 위에 아이콘 라이브러리를 불러옵니다!
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
-import '../styles/Contact.css';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import "../styles/Contact.css";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -16,7 +16,7 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -28,10 +28,10 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/mgoqvbyq', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/mgoqvbyq", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: formData.name,
@@ -42,19 +42,19 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        console.log('Form submitted successfully');
+        console.log("Form submitted successfully");
         setSubmitted(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
         setTimeout(() => {
           setSubmitted(false);
         }, 3000);
       } else {
-        alert('메시지 전송에 실패했습니다. 다시 시도해주세요.');
+        alert("메시지 전송에 실패했습니다. 다시 시도해주세요.");
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('메시지 전송에 실패했습니다. 다시 시도해주세요.');
+      console.error("Error submitting form:", error);
+      alert("메시지 전송에 실패했습니다. 다시 시도해주세요.");
     } finally {
       setIsLoading(false);
     }
@@ -62,22 +62,22 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: '📧',
-      title: 'Email',
-      value: 'rlatjdwns@icloud.com',
-      link: 'mailto:rlatjdwns@icloud.com',
+      icon: "📧",
+      title: "Email",
+      value: "rlatjdwns@icloud.com",
+      link: "mailto:rlatjdwns@icloud.com",
     },
     {
-      icon: '📱',
-      title: 'Phone',
-      value: '+82 010-5544-7419',
-      link: 'tel:+821055447419',
+      icon: "📱",
+      title: "Phone",
+      value: "+82 010-5544-7419",
+      link: "tel:+821055447419",
     },
     {
-      icon: '📍',
-      title: 'Location',
-      value: 'Seoul, Korea',
-      link: '#',
+      icon: "📍",
+      title: "Location",
+      value: "Seoul, Korea",
+      link: "#",
     },
   ];
 
@@ -93,7 +93,7 @@ export default function Contact() {
         <div className="contact-content">
           <div className="contact-info">
             {contactInfo.map((info, idx) => (
-              <a 
+              <a
                 key={idx}
                 href={info.link}
                 className="info-card"
@@ -166,7 +166,11 @@ export default function Contact() {
             </div>
 
             <button type="submit" className="submit-btn" disabled={isLoading}>
-              {isLoading ? '⏳ 전송 중...' : submitted ? '✓ 전송되었습니다!' : '메시지 보내기'}
+              {isLoading
+                ? "⏳ 전송 중..."
+                : submitted
+                  ? "✓ 전송되었습니다!"
+                  : "메시지 보내기"}
             </button>
           </form>
         </div>
@@ -175,16 +179,40 @@ export default function Contact() {
         <div className="social-links">
           <span className="social-label">Follow me on</span>
           <div className="social-icons">
-            <a href="#" className="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/?locale=ko-kr"
+              className="social-link"
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub size="24" />
             </a>
-            <a href="#" className="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <a
+              href="#"
+              className="social-link"
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin size="24" />
             </a>
-            <a href="#" className="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">
+            <a
+              href="#"
+              className="social-link"
+              title="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaTwitter size="24" />
             </a>
-            <a href="#" className="social-link" title="Instagram" target="_blank" rel="noopener noreferrer">
+            <a
+              href="#"
+              className="social-link"
+              title="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram size="24" />
             </a>
           </div>
