@@ -73,6 +73,15 @@ export default function Projects() {
       liveLink: "https://used-trade.vercel.app",
       codeLink: "https://github.com/kim-sungjun592/used-trade.git",
     },
+    {
+      title: "CoolRoute ",
+      description:
+        "배송지 위치(시/도, 구, 동)를 기반으로 최적의 물류 거점과 화물을 탐색하고, 단순 보관/배송뿐만 아니라 '화물 환적/교환 처리' 및 실시간 배송 트래킹(즐겨찾기) 기능을 지원하는 스마트 물류 플랫폼입니다. 비정형적인 화물 규격 데이터와 대용량 주문 트래픽을 지연 없이 처리할 수 있도록, 비동기 백엔드 프레임워크와 NoSQL 아키텍처를 결합하여 설계했습니다.",
+      image: "/images/team.png",
+      technologies: ["React", "TypeScript", "vite", "scss"],
+      liveLink: "https://teamproject-ruby.vercel.app",
+      codeLink: "https://github.com/kim-sungjun592/teamproject.git",
+    },
   ];
 
   return (

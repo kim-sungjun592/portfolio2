@@ -1,6 +1,6 @@
 /* 전체 Hero 섹션 레이아웃 */
 .hero {
-  background-color: #1a1a1a; /* 어두운 차콜/블랙 배경 */
+  background-color: #1a1a1a;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -15,8 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 4rem;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   position: relative;
 }
 
@@ -24,9 +25,10 @@
 .hero-text {
   flex: 1;
   max-width: 600px;
-  z-index: 10; /* 글자가 그래픽 위로 오도록 */
+  z-index: 10;
   opacity: 0;
   transform: translateY(20px);
+  flex: 0 0 50%;
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
@@ -52,7 +54,7 @@
   font-size: 3.2rem;
   font-weight: 800;
   line-height: 1.3;
-  color: #ffca3a; /* 메인 노란색 */
+  color: #ffca3a;
   margin-bottom: 2rem;
   word-break: keep-all;
   clip-path: inset(0 0 100% 0);
@@ -119,31 +121,28 @@
   width: 55%;
   height: 100%;
   z-index: 1;
+  flex: 0 0 45%;
 }
 
-/* 거대한 배경 텍스트 그룹 */
 .bg-typography {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  line-height: 0.8;
+  line-height: 0.85; /* 텍스트 줄 간격을 살짝 조정 */
 }
 
-/* ============================================================
-   🔥 [수정] 한 글자씩 등장하는 애니메이션 설정
-   ============================================================ */
+/* --- 폰트 크기 대폭 증대 --- */
 .bg-text {
-  font-size: 14rem;
+  font-size: 10.5rem; /* 기존 8rem에서 10.5rem으로 확 키움 */
   font-weight: 900;
   color: #111111;
   white-space: nowrap;
-  letter-spacing: -5px;
+  letter-spacing: -4px;
   font-family: "Arial Black", Impact, sans-serif;
-  display: flex; /* 글자들을 나란히 배치하기 위함 */
+  display: flex;
 }
 
-/* 낱개 글자(span)의 초기 상태: 투명하고 오른쪽으로 밀려있음 */
 .bg-text .char {
   opacity: 0;
   transform: translateX(40px);
@@ -152,62 +151,56 @@
     opacity 0.8s ease;
 }
 
-/* 화면 로드(.loaded)되면 원래 위치로 스르륵 등장! */
 .hero-visual.loaded .bg-text .char {
   opacity: 1;
   transform: translateX(0);
 }
-/* ============================================================ */
 
-/* 노란색 반원 장식 (Border Radius 활용) */
+/* --- 노란색 반원 장식 (크기와 위치 재조정) --- */
 .yellow-arc {
   position: absolute;
-  border: 35px solid #ffca3a;
+  border: 40px solid #ffca3a; /* 선 두께 살짝 굵게 */
   border-radius: 50%;
   z-index: 1;
 }
 
 .arc-top {
-  width: 200px;
-  height: 100px;
+  width: 220px;
+  height: 110px;
   border-bottom: none;
-  border-radius: 200px 200px 0 0;
-  top: -20px;
-  left: 20%;
+  border-radius: 220px 220px 0 0;
+  top: -30px;
+  left: 5%; /* F 글자 근처로 위치 이동 */
 }
 
 .arc-bottom {
-  width: 250px;
-  height: 125px;
+  width: 280px;
+  height: 140px;
   border-top: none;
-  border-radius: 0 0 250px 250px;
-  bottom: -30px;
-  right: 10%;
+  border-radius: 0 0 280px 280px;
+  bottom: 0px; /* 허공에 떠있지 않게 DEVELOPER 아래로 쫙 붙임 */
+  right: 15%; /* 텍스트 안쪽으로 위치를 당겨서 안정감 부여 */
 }
 
-/* ============================================================
-   📱 완벽한 반응형 뷰 (Media Queries)
-   ============================================================ */
-/* 태블릿 이하 (가로 1024px 이하) */
+/* --- 완벽한 반응형 뷰 --- */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 2.5rem; /* 제목 크기 축소 */
+    font-size: 2.5rem;
   }
   .bg-text {
-    font-size: 9rem; /* 배경 글자 크기 축소 */
+    font-size: 7.5rem; /* 태블릿 크기도 키움 */
   }
   .yellow-arc {
-    transform: scale(0.8); /* 장식 크기 축소 */
+    transform: scale(0.8);
   }
   .hero-visual {
     right: -10%;
   }
 }
 
-/* 모바일 환경 (가로 768px 이하) */
 @media (max-width: 768px) {
   .hero-content {
-    flex-direction: column; /* 좌우 배치를 상하 배치로 변경 */
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     padding-top: 10vh;
@@ -226,31 +219,35 @@
     font-size: 1rem;
     br {
       display: none;
-    } /* 모바일에선 자연스럽게 줄바꿈 되도록 br 태그 숨김 */
+    }
   }
 
   .hero-buttons {
-    justify-content: center; /* 버튼 가운데 정렬 */
+    justify-content: center;
   }
 
-  /* 모바일에서는 배경 글자를 흐릿하게 만들고 화면 꽉 차게 중앙으로 이동 */
   .hero-visual {
     right: 0;
     left: 0;
-    top: 55%; /* 화면 중간쯤으로 이동 */
+    top: 55%;
     width: 100%;
-    opacity: 0.3 !important; /* 모바일에선 글자를 흐릿하게 처리해 가독성 확보 */
+    opacity: 0.3 !important;
     display: flex;
     justify-content: center;
-    pointer-events: none; /* 배경 터치 방지 */
+    pointer-events: none;
   }
 
   .bg-typography {
-    align-items: center; /* 배경 글자 중앙 정렬 */
+    align-items: center;
   }
 
   .bg-text {
-    font-size: 5.5rem;
+    font-size: 4.5rem; /* 모바일 크기도 키움 */
     letter-spacing: -2px;
+  }
+
+  .arc-bottom {
+    bottom: 20px; /* 모바일 환경 하단 여백 보정 */
+    right: auto;
   }
 }

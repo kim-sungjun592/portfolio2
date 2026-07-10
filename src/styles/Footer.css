@@ -11,7 +11,7 @@
 }
 
 .footer-container {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--spacing-2xl) var(--spacing-lg);
   background-color: #1a1a1a; /* 공통 다크 차콜/블랙 배경 */
