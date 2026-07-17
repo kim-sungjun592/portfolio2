@@ -45,7 +45,7 @@ export default function Projects() {
       image: "/images/picstory.png",
       technologies: ["Node.js", "ui/ux", "figma"],
 
-      liveLink: "http://localhost:5173",
+      liveLink: "http://115.68.229.252",
       codeLink: "https://github.com/kim-sungjun592/picstory.git",
     },
 
