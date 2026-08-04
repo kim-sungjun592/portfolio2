@@ -82,6 +82,15 @@ export default function Projects() {
       liveLink: "https://teamproject-ruby.vercel.app",
       codeLink: "https://github.com/kim-sungjun592/teamproject.git",
     },
+    {
+      title: "SMART_RAD",
+      description:
+        "교직원 인사·근태·급여·복지를 통합 관리하는 웹 서비스입니다. Kakao OAuth 로그인, RBAC 권한 관리, 엑셀 다운로드를 지원하며, 로그인 화면과 UI 반응형 최적화를 구현",
+      image: "/images/smart.png",
+      technologies: ["Next.js", "React", "TypeScript", "Kakao OAuth"],
+      liveLink: "https://tsms.o-r.kr",
+      codeLink: "https://github.com/kim-sungjun592/SMART_RAD",
+    },
   ];
 
   return (
